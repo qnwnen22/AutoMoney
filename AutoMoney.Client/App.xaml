@@ -1,0 +1,9 @@
+﻿<Application x:Class="AutoMoney.Client.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:AutoMoney.Client"
+             >
+    <Application.Resources>
+        <ResourceDictionary Source="/Dictionaries/Base.xaml"/>
+    </Application.Resources>
+</Application>

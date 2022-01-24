@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="AutoMoney.Client.View.Chrome.Browser"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AutoMoney.Client.View.Chrome"
+             mc:Ignorable="d" 
+             xmlns:cefSharp="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
+             d:DesignHeight="300" d:DesignWidth="300"
+             >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30"/>
+                <ColumnDefinition Width="30"/>
+                <ColumnDefinition Width="70"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Content="←"
+                    Command="{Binding ElementName=ChromiumBrowser, Path=BackCommand}" 
+                    />
+            <Button Grid.Column="1" Content="→"
+                    Command="{Binding ElementName=ChromiumBrowser, Path=ForwardCommand}" 
+                    />
+            <Button Grid.Column="2" Content="새로고침"
+                    Command="{Binding ElementName=ChromiumBrowser, Path=ReloadCommand}" 
+                    />
+            <TextBox Grid.Column="3" 
+                     x:Name="TextBoxAddress"
+                     VerticalContentAlignment="Center"
+                     KeyDown="TextBoxAddress_KeyDown"
+                     Text="{Binding ElementName=ChromiumBrowser, Path=Address}"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <cefSharp:ChromiumWebBrowser 
+                x:Name="ChromiumBrowser"
+                Address="https://www.coupang.com/"
+                FrameLoadEnd="ChromiumBrowser_FrameLoadEnd"
+                >
+            </cefSharp:ChromiumWebBrowser>
+        </Grid>
+
+    </Grid>
+
+</UserControl>
