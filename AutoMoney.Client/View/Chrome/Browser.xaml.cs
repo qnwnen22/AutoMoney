@@ -77,7 +77,7 @@ namespace AutoMoney.Client.View.Chrome
                 stringBuilder.AppendLine($"<br>");
                 stringBuilder.Append("</div>");
                 product.html = stringBuilder.ToString();
-                Tistory.Model.PostResult writePost = MainWindow.TistoryApi.WritePost(product);
+                Posting.Tistory.Model.PostResult writePost = MainWindow.TistoryApi.WritePost(product);
                 if (writePost.tistory.status == "200")
                 {
                     this.Dispatcher.Invoke(() => { MessageBox.Show("True"); });

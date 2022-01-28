@@ -64,7 +64,7 @@ namespace AutoMoney.Client.View.Main
                 MessageBox.Show("티스토리 API 설정이 필요합니다.");
                 return;
             }
-            Tistory.Api tistory = new Tistory.Api(tistory_AppID, tistory_SecretKey, tistory_CallBack, tistory_BlogName);
+            Posting.Tistory.Api tistory = new Posting.Tistory.Api(tistory_AppID, tistory_SecretKey, tistory_CallBack, tistory_BlogName);
             var getAuthCodeUrl = tistory.GetAuthCodeUrl();
             var popup = new View.Chrome.PopUp(getAuthCodeUrl);
             popup.ShowDialog();

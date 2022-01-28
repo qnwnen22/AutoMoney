@@ -15,7 +15,7 @@ namespace AutoMoney
         public MongoDB()
         {
 
-            this._id = Bson.GetID();
+            //this._id = Bson.GetID();
             this.state = State.Available.ToString();
             string now = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             this.registryDate = now;

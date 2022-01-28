@@ -17,19 +17,26 @@ namespace AutoMoney.Client.View
     {
         private IService iService;
         private Member member;
-        public Tistory.Api TistoryApi;
+        public Posting.Tistory.Api TistoryApi;
         public MainWindow(IService iService, Member member)
         {
             this.iService = iService;
             this.member = member;
             InitializeComponent();
-            this.TistoryApi = new Tistory.Api(Properties.Settings.Default.Tistory_AppID,
-                                           Properties.Settings.Default.Tistory_SecretKey,
-                                           Properties.Settings.Default.Tistory_CallBack,
-                                           Properties.Settings.Default.Tistory_BlogName
-                                           );
-            Properties.Settings.Default.Tistory_Token = null;
-            Properties.Settings.Default.Save();
+            try
+            {
+                this.TistoryApi = new Posting.Tistory.Api(Properties.Settings.Default.Tistory_AppID,
+                                               Properties.Settings.Default.Tistory_SecretKey,
+                                               Properties.Settings.Default.Tistory_CallBack,
+                                               Properties.Settings.Default.Tistory_BlogName
+                                               );
+                Properties.Settings.Default.Tistory_Token = null;
+                Properties.Settings.Default.Save();
+            }
+            catch (Exception exception)
+            {
+
+            }
             this.Browser.MainWindow = this;
         }
 
@@ -52,7 +59,14 @@ namespace AutoMoney.Client.View
         {
             var settingWindow = new Main.SettingWindow();
             settingWindow.ShowDialog();
-            this.TistoryApi.SetAccessToken(Properties.Settings.Default.Tistory_Token);
+            try
+            {
+                this.TistoryApi.SetAccessToken(Properties.Settings.Default.Tistory_Token);
+            }
+            catch (Exception exception)
+            {
+
+            }
         }
     }
 }
