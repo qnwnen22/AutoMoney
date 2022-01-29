@@ -40,9 +40,9 @@ namespace AutoMoney.Client.View.Chrome
                 string getSourceAsync = await iFrame.GetSourceAsync();
                 var http = new Sourcing.Coupang.Http();
                 Product product = http.GetProduct(getSourceAsync);
-                var api = new Coupang.Api(Properties.Settings.Default.Coupang_AccessKey,
+                var api = new Sourcing.Coupang.Api(Properties.Settings.Default.Coupang_AccessKey,
                                           Properties.Settings.Default.Coupang_SecretKey);
-                Coupang.ShortUrlResult shortUrlResult = api.GetShortUrlResult(product.originalUrl);
+                Sourcing.Coupang.Model.ShortUrlResult shortUrlResult = api.GetShortUrlResult(product.originalUrl);
                 string shortenUrl = shortUrlResult.data?.First().shortenUrl;
                 if (shortenUrl.IsNullOrWhiteSpace())
                 {
@@ -66,6 +66,7 @@ namespace AutoMoney.Client.View.Chrome
                 //sb.AppendLine(thum);
                 var stringBuilder = new StringBuilder();
                 stringBuilder.AppendLine("<div align='center'>");
+                stringBuilder.AppendLine("<meta http-equiv='Content-Type' content='text/html;charset=UTF-8'>");
                 stringBuilder.AppendLine($"{product.title}");
                 stringBuilder.AppendLine($"<br>");
                 stringBuilder.AppendLine($"<br>");
@@ -77,6 +78,14 @@ namespace AutoMoney.Client.View.Chrome
                 stringBuilder.AppendLine($"<br>");
                 stringBuilder.Append("</div>");
                 product.html = stringBuilder.ToString();
+
+                this.MainWindow.Dispatcher.Invoke(() =>
+                {
+                    var htmlWindow = new Main.HtmlWindow(product.html);
+                    htmlWindow.ShowDialog();
+                });
+
+
                 Posting.Tistory.Model.PostResult writePost = MainWindow.TistoryApi.WritePost(product);
                 if (writePost.tistory.status == "200")
                 {

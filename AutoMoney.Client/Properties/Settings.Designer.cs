@@ -106,5 +106,53 @@ namespace AutoMoney.Client.Properties {
                 this["Tistory_BlogName"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0,0")]
+        public global::System.Windows.Point Window_Point {
+            get {
+                return ((global::System.Windows.Point)(this["Window_Point"]));
+            }
+            set {
+                this["Window_Point"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0,0")]
+        public global::System.Windows.Size Window_Size {
+            get {
+                return ((global::System.Windows.Size)(this["Window_Size"]));
+            }
+            set {
+                this["Window_Size"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Normal")]
+        public global::System.Windows.WindowState Window_State {
+            get {
+                return ((global::System.Windows.WindowState)(this["Window_State"]));
+            }
+            set {
+                this["Window_State"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Window_IsFirst {
+            get {
+                return ((bool)(this["Window_IsFirst"]));
+            }
+            set {
+                this["Window_IsFirst"] = value;
+            }
+        }
     }
 }

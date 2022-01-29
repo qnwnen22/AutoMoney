@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoMoney", "AutoMoney\Auto
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoMoney.Client", "AutoMoney.Client\AutoMoney.Client.csproj", "{5B973F8D-22A4-40CA-AF9B-A44BA5936169}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoMoney.Server", "AutoMoney.Server\AutoMoney.Server.csproj", "{DC1DAC79-AF77-4DC6-B991-E5ED46D768A7}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9E3FA79B-A4BA-456A-B4A0-D4852DD7ABD3}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
@@ -28,10 +26,6 @@ Global
 		{5B973F8D-22A4-40CA-AF9B-A44BA5936169}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B973F8D-22A4-40CA-AF9B-A44BA5936169}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B973F8D-22A4-40CA-AF9B-A44BA5936169}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DC1DAC79-AF77-4DC6-B991-E5ED46D768A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DC1DAC79-AF77-4DC6-B991-E5ED46D768A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DC1DAC79-AF77-4DC6-B991-E5ED46D768A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DC1DAC79-AF77-4DC6-B991-E5ED46D768A7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

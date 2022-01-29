@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:AutoMoney.Client.View"
         xmlns:uc="clr-namespace:AutoMoney.Client.View.Chrome"
         mc:Ignorable="d"
-        WindowStartupLocation="CenterScreen"
+        Closed="Window_Closed"
         Title="MainWindow" Height="600" Width="1000">
     <Grid>
         <Grid.RowDefinitions>
@@ -30,6 +30,8 @@
                           Header="네이버"
                           Click="UrlNaver_Click"/>
                 </MenuItem>
+                <MenuItem x:Name="btnTest" Header="테스트" 
+                          Click="btnTest_Click"/>
             </Menu>
             <Menu Grid.Column="1"
                   HorizontalAlignment="Right">

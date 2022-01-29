@@ -24,31 +24,31 @@ namespace AutoMoney.Client
             System.Windows.Application.Current.ShutdownMode = System.Windows.ShutdownMode.OnExplicitShutdown;
             var mainWindow1 = new View.MainWindow(null,null);
             mainWindow1.ShowDialog();
-            var channelFactory = new ChannelFactory<IService>();
-            channelFactory.Endpoint.Address = new EndpointAddress("net.tcp://localhost:8080/AutoMoney");
-            channelFactory.Endpoint.Binding = new CustomNetTcpBinding().GetNetTcpBinding();
-            channelFactory.Endpoint.Contract.ContractType = typeof(IService);
-            IService iService = channelFactory.CreateChannel();
-            do
-            {
-                var loginWindow = new View.LoginWindow(iService);
-                bool? isLogin = loginWindow.ShowDialog();
-                if (isLogin == true)
-                {
-                    var mainWindow = new View.MainWindow(iService, loginWindow.member);
-                    bool? isClose = mainWindow.ShowDialog();
-                    if (isClose == true)
-                    {
-                        continue;
-                    }
-                    break;
-                }
-                else
-                {
-                    break;
-                }
-            }
-            while (true);
+            //var channelFactory = new ChannelFactory<IService>();
+            //channelFactory.Endpoint.Address = new EndpointAddress("net.tcp://localhost:8080/AutoMoney");
+            //channelFactory.Endpoint.Binding = new CustomNetTcpBinding().GetNetTcpBinding();
+            //channelFactory.Endpoint.Contract.ContractType = typeof(IService);
+            //IService iService = channelFactory.CreateChannel();
+            //do
+            //{
+            //    var loginWindow = new View.LoginWindow(iService);
+            //    bool? isLogin = loginWindow.ShowDialog();
+            //    if (isLogin == true)
+            //    {
+            //        var mainWindow = new View.MainWindow(iService, loginWindow.member);
+            //        bool? isClose = mainWindow.ShowDialog();
+            //        if (isClose == true)
+            //        {
+            //            continue;
+            //        }
+            //        break;
+            //    }
+            //    else
+            //    {
+            //        break;
+            //    }
+            //}
+            //while (true);
         }
     }
 }

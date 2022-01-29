@@ -82,7 +82,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Sourcing\Coupang\Httop.cs" />
+    <Compile Include="Sourcing\Coupang\Api.cs" />
+    <Compile Include="Sourcing\Coupang\HmacGenerator.cs" />
+    <Compile Include="Sourcing\Coupang\Http.cs" />
+    <Compile Include="Sourcing\Coupang\Model\ShortUrlResult.cs" />
     <Compile Include="Sourcing\Coupang\sdp.cs" />
     <Compile Include="Sourcing\ISourcing.cs" />
   </ItemGroup>

@@ -1,17 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace AutoMoney.Client.View.Main
 {
@@ -68,7 +58,7 @@ namespace AutoMoney.Client.View.Main
             var getAuthCodeUrl = tistory.GetAuthCodeUrl();
             var popup = new View.Chrome.PopUp(getAuthCodeUrl);
             popup.ShowDialog();
-            var address = popup.Chrome.Address;
+            string address = popup.Chrome.Address;
             var token = address.Truncate("code=", "&");
             if (token.IsNullOrWhiteSpace())
             {
